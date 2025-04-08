@@ -14,50 +14,88 @@
     <link href="output.css" rel="stylesheet" />
 
     <title>Frontend Mentor | Interactive card details form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .bg-main {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg-main-desktop-hb2ti03vZdwwKPBIF8k1IHZHlQc66H.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .card-front {
+        background: linear-gradient(135deg, #6448fe, #600594, #a15acb, #f47c90);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      }
+
+      input::placeholder {
+        color: #dedddf;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #6448fe;
+      }
+
+      @media (max-width: 768px) {
+        .bg-main {
+          min-height: 35vh;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="min-h-screen flex">
     <!--Left side with background and card-->
-    <div>
+    <div class="bg-main w-full ">
       <!--Front card-->
-      <div>
+      <div></div>
 
-      </div>
       <!--Back card-->
-      <div>
-
-      </div>
+      <div></div>
     </div>
 
     <!--Right side with form-->
-    <div>
-      <div>
+    <div class="w-full p-10 flex justify-center items-center">
+      <div class="w-full">
         <form action="">
           <!--Cardholder Name-->
-          <div>
-            <label for="">CARDHOLDER NAME</label>
-            <input type="text">
+          <div class="mb-6">
+            <label class="flex text-xs font-medium tracking-widest" for="">CARDHOLDER NAME</label>
+            <input placeholder="e.g. Jane Appleseed" class="border rounded-md py-3 w-full px-4" type="text" />
           </div>
 
           <!--Card Number-->
-          <div>
-            <label for="">CARD NUMBER</label>
-            <input type="text">
+          <div class="mb-6">
+            <label class="flex text-xs font-medium tracking-widest" for="">CARD NUMBER</label>
+            <input placeholder="e.g. 1234 5678 9123 0000" class="border rounded-md py-3 px-4 w-full" type="text" />
           </div>
 
-          <!--Date and CVC-->
-          <div>
-            <div>
-              <!--date-->
-              <label for="">EXP.DATE (MM/YY)</label>
-              <input type="text">
-              <input type="text">
+          <!--Date and CVC--> 
+          <div class="flex mb-8 gap-4 ">
+            <!--date-->
+            <div class="">
+              <label class="text-xs font-medium tracking-widest" for="">EXP.DATE (MM/YY)</label>
+              <div class="flex gap-2">
+              <input placeholder="MM" class="border rounded-md py-3 px-4" type="text" />
+              <input placeholder="YY" class="border rounded-md py-3 px-4" type="text" />
             </div>
+            </div>
+
             <!--CVC-->
-            <div>
-              <label for="">CVC</label>
-              <input type="text">
+            <div class="">
+              <label class="block font-medium text-xs tracking-widest" for="">CVC</label>
+              <input placeholder="e.g. 123" class="border rounded-md py-3 px-4" type="text" />
             </div>
           </div>
+
+          <!--Button-->
+          <button class="bg-[#21092f] text-white w-full py-4 tracking-widest rounded-md" type="submit">Confirm</button>
         </form>
       </div>
     </div>
