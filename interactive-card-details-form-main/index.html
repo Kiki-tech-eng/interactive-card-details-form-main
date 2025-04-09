@@ -29,6 +29,19 @@
         background-position: center;
       }
 
+      .card-main {
+        background-image: url(images/bg-card-front.png);
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: 400px 220px;
+      }
+
+      .card-back{background-image: url(images/bg-card-back.png);
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: 400px 220px;
+      }
+
       .card-front {
         background: linear-gradient(135deg, #6448fe, #600594, #a15acb, #f47c90);
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
@@ -52,17 +65,31 @@
   </head>
   <body class="min-h-screen flex">
     <!--Left side with background and card-->
-    <div class="bg-main w-full">
+    <div class="bg-main w-[65%]">
       <!--Front card-->
-      <div></div>
+      <div class="card-main w-[400px] h-[220px] px-6 py-5 tracking-widest font[500] text-white">
+        <img class="pb-14 h-[100px]" src="./images/card-logo.svg" alt="" />
+        <div class="flex justify-between mb-5 text-[21px] pr-2 ">
+          <p class="">0000</p> 
+          <p>0000</p>
+          <p>0000</p>
+          <p>0000</p>
+        </div>
+        <div class="flex justify-between uppercase text-[12px]">
+          <p>Jane Appleseed</p>
+          <p>00/00</p>
+        </div>
+      </div>
 
       <!--Back card-->
-      <div></div>
+      <div class="card-back w-[400px] h-[220px] p-8 z-0">
+        <div class="flex items-center justify-end mt-16 ml-auto pr-16 text-white">000</div>
+      </div>
     </div>
 
     <!--Right side with form-->
     <div class="w-full p-6 flex justify-center items-center md:p-10">
-      <div class="w-full max-w-md hidden">
+      <div class="w-full max-w-md">
         <form action="">
           <!--Cardholder Name-->
           <div class="mb-6">
@@ -135,7 +162,7 @@
       </div>
 
       <!--Complete state-->
-      <div class="text-center">
+      <div class="text-center hidden">
         <div class="block place-items-center">
           <img class="h-16" src="./images/icon-complete.svg" alt="" />
         </div>
