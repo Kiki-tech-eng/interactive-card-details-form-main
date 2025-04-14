@@ -33,7 +33,7 @@
         width: 380px;
         height: 210px;
         position: absolute;
-        left: 250px;
+        left: 200px;
         top: 340px;
       }
 
@@ -53,7 +53,7 @@
         width: 380px;
         height: 210px;
         position: absolute;
-        left: 150px;
+        left: 130px;
         top: 90px;
         z-index: 10;
         padding: 15px;
@@ -94,12 +94,13 @@
         .card-main {
           background-size: 285px 210px;
           width: 285px;
-          height: 185px;
+          height: 175px;
           max-width: 85%;
           left: 5%;
           top: 130px;
           bottom: -36px;
         }
+
       }
     </style>
   </head>
@@ -121,7 +122,7 @@
       <div
         class="card-main shadow-[4px_13px_30px_0px_rgba(0,_0,_0,_0.3)] rounded-[10px] px-6 py-5"
       >
-        <img class="w-[50px] pb-16" src="./images/card-logo.svg" alt="" />
+        <img class="w-[50px] pb-16 max-md:pb-[37px]" src="./images/card-logo.svg" alt="" />
         <div class="flex justify-between mb-5 text-[21px] pr-2 tracking-widest">
           <p>0000</p>
           <p>0000</p>
@@ -138,10 +139,8 @@
     </div>
 
     <!--Right side with form-->
-    <div
-      class="flex-1 bg-white pb-10 flex items-center justify-center min-h-[calc(100vh-240px)] md:min-h-[unset]"
-    >
-      <div class="w-full max-w-md px-4 md:px-6 mt-[-50px] md:mt-0">
+    <div class="flex-1 w-full flex items-center justify-center md:pt-10">
+      <div class="max-md:pt-[150px] w-full max-w-md px-4 md:px-6 mt-[-50px] md:mt-0">
         <form action="">
           <!-- Cardholder Name -->
           <div class="mb-6">
@@ -168,9 +167,9 @@
           </div>
 
           <!-- Date and CVC -->
-          <div class="mb-8 flex flex-col md:flex-row gap-4">
+          <div class="mb-8 flex gap-4">
             <!-- Date -->
-            <div class="w-full md:w-1/2">
+            <div class="w-1/2">
               <label class="text-xs font-medium mb-1 tracking-widest">
                 EXP.DATE (MM/YY)
               </label>
@@ -188,7 +187,7 @@
               </div>
             </div>
             <!-- CVC -->
-            <div class="w-full md:w-1/2">
+            <div class="w-1/2">
               <label class="block font-medium text-xs tracking-widest mb-2">
                 CVC
               </label>
