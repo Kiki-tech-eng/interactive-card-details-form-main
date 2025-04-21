@@ -1,233 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <title>Frontend Mentor | Interactive card details form</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <title>Frontend Mentor | Interactive card details form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+
+    body {
+      font-family: "Space Grotesk", sans-serif;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .bg-main {
+      background-image: url("./images/bg-main-desktop.png");
+      width: 32%;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .card-back {
+      background-image: url(images/bg-card-back.png);
+      background-size: 380px 210px;
+      width: 380px;
+      height: 210px;
+      position: absolute;
+      left: 200px;
+      top: 340px;
+    }
+
+    .card-back div {
+      margin-top: 0 !important;
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 0 !important;
+    }
+
+    .card-main {
+      background-image: url(images/bg-card-front.png);
+      background-size: 380px 210px;
+      background-repeat: no-repeat;
+      width: 380px;
+      height: 210px;
+      position: absolute;
+      left: 130px;
+      top: 90px;
+      z-index: 10;
+      padding: 15px;
+      color: white;
+    }
+
+    input::placeholder {
+      color: #dedddf;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #6448fe;
+    }
+
+    @media (max-width: 768px) {
       body {
-        font-family: "Space Grotesk", sans-serif;
-        display: flex;
-        flex-direction: row;
+        flex-direction: column;
       }
 
       .bg-main {
-        background-image: url("./images/bg-main-desktop.png");
-        width: 32%;
-        min-height: 100vh;
-        position: relative;
+        background-image: url("./images/bg-main-mobile.png");
+        width: 100%;
+        height: 240px;
+        min-height: auto;
       }
 
       .card-back {
-        background-image: url(images/bg-card-back.png);
-        background-size: 380px 210px;
-        width: 380px;
-        height: 210px;
-        position: absolute;
-        left: 200px;
-        top: 340px;
-      }
-
-      .card-back div {
-        margin-top: 0 !important;
-        position: absolute;
-        right: 60px;
-        top: 50%;
-        transform: translateY(-50%);
-        padding-right: 0 !important;
+        background-size: contain;
+        width: 285px;
+        height: 157px;
+        max-width: 85%;
+        left: auto;
+        right: 5%;
+        top: 30px;
       }
 
       .card-main {
-        background-image: url(images/bg-card-front.png);
-        background-size: 380px 210px;
-        background-repeat: no-repeat;
-        width: 380px;
-        height: 210px;
-        position: absolute;
-        left: 130px;
-        top: 90px;
-        z-index: 10;
-        padding: 15px;
-        color: white;
+        background-size: 285px 210px;
+        width: 285px;
+        height: 175px;
+        max-width: 85%;
+        left: 5%;
+        top: 130px;
+        bottom: -36px;
       }
 
-      input::placeholder {
-        color: #dedddf;
-      }
+    }
+  </style>
+</head>
 
-      input:focus {
-        outline: none;
-        border-color: #6448fe;
-      }
-
-      @media (max-width: 768px) {
-        body {
-          flex-direction: column;
-        }
-
-        .bg-main {
-          background-image: url("./images/bg-main-mobile.png");
-          width: 100%;
-          height: 240px;
-          min-height: auto;
-        }
-
-        .card-back {
-          background-size: contain;
-          width: 285px;
-          height: 157px;
-          max-width: 85%;
-          left: auto;
-          right: 5%;
-          top: 30px;
-        }
-
-        .card-main {
-          background-size: 285px 210px;
-          width: 285px;
-          height: 175px;
-          max-width: 85%;
-          left: 5%;
-          top: 130px;
-          bottom: -36px;
-        }
-
-      }
-    </style>
-  </head>
-  <body class="min-h-screen">
-    <!--Left side with background and card-->
-    <div class="bg-main">
-      <!--Back card-->
-      <div
-        class="card-back shadow-[4px_13px_30px_0px_rgba(0,_0,_0,_0.3)] rounded-[10px]"
-      >
-        <div
-          class="flex items-center justify-end mt-24 ml-auto pr-16 text-white"
-        >
-          000
-        </div>
-      </div>
-
-      <!--Front card-->
-      <div
-        class="card-main shadow-[4px_13px_30px_0px_rgba(0,_0,_0,_0.3)] rounded-[10px] px-6 py-5"
-      >
-        <img class="w-[50px] pb-16 max-md:pb-[37px]" src="./images/card-logo.svg" alt="" />
-        <div class="flex justify-between mb-5 text-[21px] pr-2 tracking-widest">
-          <p>0000</p>
-          <p>0000</p>
-          <p>0000</p>
-          <p>0000</p>
-        </div>
-        <div
-          class="flex justify-between pr-2 uppercase text-[11px] tracking-widest"
-        >
-          <p>Jane Appleseed</p>
-          <p>00/00</p>
-        </div>
+<body class="min-h-screen">
+  <!--Left side with background and card-->
+  <div class="bg-main">
+    <!--Back card-->
+    <div class="card-back shadow-[4px_13px_30px_0px_rgba(0,_0,_0,_0.3)] rounded-[10px]">
+      <div class="flex items-center justify-end mt-24 ml-auto pr-16 text-white">
+        000
       </div>
     </div>
 
-    <!--Right side with form-->
-    <div class="flex-1 w-full flex items-center justify-center md:pt-10">
-      <div class="max-md:pt-[150px] w-full max-w-md px-4 md:px-6 mt-[-50px] md:mt-0">
-        <form action="">
-          <!-- Cardholder Name -->
-          <div class="mb-6">
-            <label class="flex text-xs mb-2 font-medium tracking-widest">
-              CARDHOLDER NAME
-            </label>
-            <input
-              placeholder="e.g. Jane Appleseed"
-              class="border rounded-md py-3 w-full px-4 border-gray-300"
-              type="text"
-            />
-          </div>
-
-          <!-- Card Number -->
-          <div class="mb-6">
-            <label class="flex text-xs font-medium mb-2 tracking-widest">
-              CARD NUMBER
-            </label>
-            <input
-              placeholder="e.g. 1234 5678 9123 0000"
-              class="border rounded-md py-3 px-4 w-full border-gray-300"
-              type="text"
-            />
-          </div>
-
-          <!-- Date and CVC -->
-          <div class="mb-8 flex gap-4">
-            <!-- Date -->
-            <div class="w-1/2">
-              <label class="text-xs font-medium mb-1 tracking-widest">
-                EXP.DATE (MM/YY)
-              </label>
-              <div class="flex gap-2">
-                <input
-                  placeholder="MM"
-                  class="w-1/2 border rounded-md py-3 px-4 border-gray-300"
-                  type="text"
-                />
-                <input
-                  placeholder="YY"
-                  class="w-1/2 border rounded-md py-3 px-4 border-gray-300"
-                  type="text"
-                />
-              </div>
-            </div>
-            <!-- CVC -->
-            <div class="w-1/2">
-              <label class="block font-medium text-xs tracking-widest mb-2">
-                CVC
-              </label>
-              <input
-                maxlength="3"
-                placeholder="e.g. 123"
-                class="w-full border rounded-md py-3 px-4 border-gray-300"
-                type="text"
-              />
-            </div>
-          </div>
-
-          <!-- Button -->
-          <button
-            class="bg-[#21092f] text-white w-full py-4 tracking-widest rounded-md"
-            type="submit"
-          >
-            Confirm
-          </button>
-        </form>
+    <!--Front card-->
+    <div class="card-main shadow-[4px_13px_30px_0px_rgba(0,_0,_0,_0.3)] rounded-[10px] px-6 py-5">
+      <img class="w-[50px] pb-16 max-md:pb-[37px]" src="./images/card-logo.svg" alt="" />
+      <div class="flex justify-between mb-5 text-[21px] pr-2 tracking-widest">
+        <p>0000</p>
+        <p>0000</p>
+        <p>0000</p>
+        <p>0000</p>
       </div>
-      <!-- Complete State -->
-      <div class="text-center hidden">
-        <div class="block place-items-center">
-          <img class="h-16" src="./images/icon-complete.svg" alt="" />
+      <div class="flex justify-between pr-2 uppercase text-[11px] tracking-widest">
+        <p>Jane Appleseed</p>
+        <p>00/00</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Right side with form-->
+  <div class="flex-1 w-full flex items-center justify-center md:pt-10">
+    <div class="max-md:pt-[150px] w-full max-w-md px-4 md:px-6 mt-[-50px] md:mt-0">
+      <form action="">
+        <!-- Cardholder Name -->
+        <div class="mb-6">
+          <label class="flex text-xs mb-2 font-medium tracking-widest">
+            CARDHOLDER NAME
+          </label>
+          <input placeholder="e.g. Jane Appleseed" class="border rounded-md py-3 w-full px-4 border-gray-300"
+            type="text" />
         </div>
-        <h2 class="font-medium tracking-widest my-4">THANK YOU!</h2>
-        <p class="font-normal text-[12px] tracking-widest mb-8">
+
+        <!-- Card Number -->
+        <div class="mb-6">
+          <label class="flex text-xs font-medium mb-2 tracking-widest">
+            CARD NUMBER
+          </label>
+          <input placeholder="e.g. 1234 5678 9123 0000" class="border rounded-md py-3 px-4 w-full border-gray-300"
+            type="text" />
+        </div>
+
+        <!-- Date and CVC -->
+        <div class="mb-8 flex gap-4">
+          <!-- Date -->
+          <div class="w-1/2">
+            <label class="text-xs font-medium mb-1 tracking-widest">
+              EXP.DATE (MM/YY)
+            </label>
+            <div class="flex gap-2">
+              <input placeholder="MM" class="w-1/2 border rounded-md py-3 px-4 border-gray-300" type="text" />
+              <input placeholder="YY" class="w-1/2 border rounded-md py-3 px-4 border-gray-300" type="text" />
+            </div>
+          </div>
+          <!-- CVC -->
+          <div class="w-1/2">
+            <label class="block font-medium text-xs tracking-widest mb-2">
+              CVC
+            </label>
+            <input maxlength="3" placeholder="e.g. 123" class="w-full border rounded-md py-3 px-4 border-gray-300"
+              type="text" />
+          </div>
+        </div>
+
+        <!-- Button -->
+        <button class="bg-[#21092f] text-white w-full py-4 tracking-widest rounded-md" type="submit">
+          Confirm
+        </button>
+      </form>
+
+      <!-- Complete State - Modified to be properly centered -->
+      <div class="text-center hidden w-full max-w-md mx-auto">
+        <div class="flex justify-center my-10">
+          <img class="h-20" src="./images/icon-complete.svg" alt="" />
+        </div>
+        <h2 class="font-medium text-2xl tracking-widest my-4">THANK YOU!</h2>
+        <p class="font-normal text-[#8e8593] text-lg tracking-wide mb-8">
           We've added your card details
         </p>
-        <div class="block items-center">
-          <button
-            class="w-[100%] bg-[#21092f] text-white tracking-widest rounded-md px-10 py-3"
-            type="submit"
-          >
+        <div class="flex justify-center">
+          <button class="w-full bg-[#21092f] text-white tracking-widest rounded-md px-10 py-4" type="submit">
             Continue
           </button>
         </div>
       </div>
     </div>
-    <script src="form.js"></script>
-  </body>
+  </div>
+  <script src="form.js"></script>
+</body>
+
 </html>
