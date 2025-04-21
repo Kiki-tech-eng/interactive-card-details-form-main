@@ -1,3 +1,4 @@
+
 // ==================== ELEMENT SELECTION ==================== //
 
 // Select the main form element using the querySelector method which returns the first element that matches the CSS selector
